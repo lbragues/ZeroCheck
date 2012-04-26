@@ -19,7 +19,7 @@
 		  return res;
 		}
 
-		var json_text=loadHtml("http://sizeone.net/zerobin/list.json");
+		var json_text=loadHtml("https://raw.github.com/lbragues/ZeroCheck/master/list.json");
 		var hashes=JSON.parse(json_text);
 		var version_hashes=hashes["list"];
 		var site_hashes=hashes["sites"];
