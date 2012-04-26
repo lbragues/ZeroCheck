@@ -1,0 +1,56 @@
+<!--
+	Author: SizeOne 2012
+	Use at your own risk.
+	sizeonedev.wordpress.com
+-->
+<html>
+<head>
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript" src="sha1.js"></script>
+	<script type="text/javascript" src="check.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+		var matchTag = ["jquery.js","sjcl.js","base64.js","rawdeflate.js","rawinflate.js","zerobin.js"];
+		var eventList = ["onblur","onchange","onclick","oncontextmenu","oncopy","oncut","ondblclick","onerror","onfocus","onfocusin","onfocusout","onhashchange","onkeydown","onkeypress","onkeyup","onload","onmousedown","onmouseenter","onmouseleave","onmousemove","onmouseout","onmouseover","onmouseup","onmousewheel","onpaste","onresize","onscroll","onselect","onsubmit","ontextinput","onunload","onwheel"];
+		function loadHtml(link){
+		  var res = "";
+		  jQuery.ajax({
+		    "url":link, 
+		    //"success":function(html){res = html;},
+		    "error":function(error){if(error.status==200){res=error.responseText;}else{console.log(error);}},
+		    "async":false,
+		    "cache":false
+		  }).done(function(html){res = html;});
+		  return res;
+		}
+
+		var json_text=loadHtml("http://sizeone.net/zerobin/list.json");
+		var hashes=JSON.parse(json_text);
+		var version_hashes=hashes["list"];
+		var site_hashes=hashes["sites"];
+
+		function checkForUrl(tabId, changeInfo, tab) {
+			html=loadHtml(tab.url);
+			if (isZerobin(html) && changeInfo["status"]=="complete") {
+		  		var ver=hashZerobin(collectScripts(tab.url,html));
+		  		var page=hashZerobinPage(collectPageScripts(tab.url,html),tab.url);
+		  		window.localStorage.removeItem("phash");
+		  		window.localStorage.setItem("phash", page);
+		  		window.localStorage.removeItem("hash");
+		  		window.localStorage.setItem("hash", ver);
+		  		window.localStorage.removeItem("surl");
+		  		window.localStorage.setItem("surl", tab.url);
+		    	chrome.pageAction.show(tab.id);
+			}
+		}
+		chrome.tabs.onUpdated.addListener(checkForUrl);
+		chrome.tabs.onActivated.addListener(function(activeInfo) {
+			var id=activeInfo.tabId;
+			chrome.tabs.get(id, function(tab){
+				checkForUrl(tab.tabId,{"status":"complete","from":"onactive"},tab);
+			});
+		});
+	</script>
+</body>
+</html>

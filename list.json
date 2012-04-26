@@ -1,0 +1,139 @@
+{"list":
+[
+	{
+		"hash":"9bf66217e228fdefe23e62e3b50f6a6941751422",
+		"version":"Alpha 0.11",
+		"url":"http://sebsauvage.net/wiki/doku.php?id=php:zerobin",
+		"secure":true,
+		"verifiedby":"SizeOne",
+		"author":"Sébastien SAUVAGE",
+		"info":"First public release",
+		"libs":  {
+					"lib/zerobin.js?Alpha%200.11" : "fdc5e70cac01d12126911bc4cbdecda1fe948875",
+					"lib/rawinflate.js" : "c794f9c8c1576fac08f1467f2a10c86d7461d7da",
+					"lib/rawdeflate.js" : "7aaf55ff776a175e4550f7343879a8f4746d2f5e",
+					"lib/base64.js" : "0f5f3e2a1b21a8bf65dbfea23af439b650938937",
+					"lib/sjcl.js" : "b0e61e02fcb70b41425b8bb900e4265e624ad4ba",
+					"lib/jquery.js" : "abcd2ba13348f178b17141b445bc99f1917d47af"
+				}
+	},
+	{
+		"hash":"52dc57ca85eb53ea129576f16cdebc0e5556fe40",
+		"version":"Alpha 0.12",
+		"url":"http://sebsauvage.net/wiki/doku.php?id=php:zerobin",
+		"secure":true,
+		"verifiedby":"SizeOne",
+		"author":"Sébastien SAUVAGE",
+		"info":"Outdated!",
+		"libs":  {
+					"lib/zerobin.js?Alpha%200.12" : "14971dec582e8c5450fdeab505d48bc042e25568",
+					"lib/rawinflate.js" : "c794f9c8c1576fac08f1467f2a10c86d7461d7da",
+					"lib/rawdeflate.js" : "7aaf55ff776a175e4550f7343879a8f4746d2f5e",
+					"lib/base64.js" : "0f5f3e2a1b21a8bf65dbfea23af439b650938937",
+					"lib/sjcl.js" : "b0e61e02fcb70b41425b8bb900e4265e624ad4ba",
+					"lib/jquery.js" : "abcd2ba13348f178b17141b445bc99f1917d47af"
+				}
+	},
+	{
+        "hash":"3ff6435f63ebed9ab0de360b5a6ed379800ad789", 
+        "version":"Alpha 0.13",
+        "url":"http://sebsauvage.net/wiki/doku.php?id=php:zerobin",
+        "secure":true,
+        "verifiedby":"SizeOne",
+        "author":"Sébastien SAUVAGE",
+        "info":"Outdated!",
+		"libs": {
+					"lib/zerobin.js?Alpha%200.13" : "f61f1ebac4a85390c4caba50cde64d1f5c74358c",
+					"lib/rawinflate.js" : "c794f9c8c1576fac08f1467f2a10c86d7461d7da",
+					"lib/rawdeflate.js" : "7aaf55ff776a175e4550f7343879a8f4746d2f5e",
+					"lib/base64.js" : "0f5f3e2a1b21a8bf65dbfea23af439b650938937",
+					"lib/sjcl.js" : "b0e61e02fcb70b41425b8bb900e4265e624ad4ba",
+					"lib/jquery.js" : "abcd2ba13348f178b17141b445bc99f1917d47af"
+				}
+    },
+	{
+        "hash":"a87d0488f608fd00667df6abdc263ae0ff7e2062", 
+        "version":"Alpha 0.14",
+        "url":"http://sebsauvage.net/wiki/doku.php?id=php:zerobin",
+        "secure":true,
+        "verifiedby":"SizeOne",
+        "author":"Sébastien SAUVAGE",
+        "info":"Outdated!",
+		"libs": {
+					"lib/zerobin.js?Alpha%200.14" : "99d522e6165e07b78c479af6fbf8bb464bc89c54",
+					"lib/rawinflate.js" : "c794f9c8c1576fac08f1467f2a10c86d7461d7da",
+					"lib/rawdeflate.js" : "7aaf55ff776a175e4550f7343879a8f4746d2f5e",
+					"lib/base64.js" : "0f5f3e2a1b21a8bf65dbfea23af439b650938937",
+					"lib/sjcl.js" : "b0e61e02fcb70b41425b8bb900e4265e624ad4ba",
+					"lib/jquery.js" : "abcd2ba13348f178b17141b445bc99f1917d47af"
+				}
+    },
+	{
+		"hash":"8b85b191305915602c759cfc0921d00d77a0ec3e",
+		"version":"Alpha 0.15",
+		"url":"http://sebsauvage.net/wiki/doku.php?id=php:zerobin",
+		"secure":true,
+		"verifiedby":"SizeOne",
+		"author":"Sébastien SAUVAGE",
+		"info":"Latest version",
+		"libs":  {
+					"lib/zerobin.js?Alpha%200.15" : "f7e5fe30752d429c729751a4fa027d41ec9b2337",
+					"lib/rawinflate.js" : "c794f9c8c1576fac08f1467f2a10c86d7461d7da",
+					"lib/rawdeflate.js" : "7aaf55ff776a175e4550f7343879a8f4746d2f5e",
+					"lib/base64.js" : "0f5f3e2a1b21a8bf65dbfea23af439b650938937",
+					"lib/sjcl.js" : "b0e61e02fcb70b41425b8bb900e4265e624ad4ba",
+					"lib/jquery.js" : "abcd2ba13348f178b17141b445bc99f1917d47af"
+				}
+	},
+	{
+		"hash":"a0dd03f56280f0d76f7da24ad4da04c4c5dbfb5c",
+		"version":"Alpha 0.15 (github)",
+		"url":"http://sebsauvage.net/wiki/doku.php?id=php:zerobin",
+		"secure":true,
+		"verifiedby":"SizeOne",
+		"author":"Sébastien SAUVAGE",
+		"info":"Latest version (github)",
+		"libs":  {
+					"js/zerobin.js?Alpha%200.15" : "dca0e6932c04a96e4907a10ec45aa14f494aabaf",
+					"js/rawinflate.js" : "c794f9c8c1576fac08f1467f2a10c86d7461d7da",
+					"js/rawdeflate.js" : "7aaf55ff776a175e4550f7343879a8f4746d2f5e",
+					"js/base64.js" : "0f5f3e2a1b21a8bf65dbfea23af439b650938937",
+					"js/sjcl.js" : "b0e61e02fcb70b41425b8bb900e4265e624ad4ba",
+					"js/jquery.js" : "abcd2ba13348f178b17141b445bc99f1917d47af"
+				}
+	}
+],
+"sites":
+[
+	{
+		"hash":"fdab6bab2f308b709054e55e4b9e16115db7f2d8",
+		"url":"http://sizeone.net/zerobin",
+		"version":"Alpha 0.15",
+		"secure":true,
+		"verifiedby":"SizeOne",
+		"author":"Sébastien SAUVAGE",
+		"info":"Hosted ",
+		"scripts": {
+					"onclick:32:1" : "5556e4e0fc87d8e37d88b7c1981482797182747b",
+					"onclick:30:1" : "c653b020d243b8d64b0ab3bd5a2c3f280659cade",
+					"onclick:28:1" : "79a4a743adce1190554c534d328f853e7b2ee47e",
+					"onclick:13:1" : "79a4a743adce1190554c534d328f853e7b2ee47e"
+				}
+	},
+	{
+		"hash":"8164963ffc98c088f66db1f9ca777c515758c91d",
+		"url":"http://sebsauvage.net/paste/",
+		"version":"Alpha 0.15",
+		"secure":true,
+		"verifiedby":"SizeOne",
+		"author":"Sébastien SAUVAGE",
+		"info":"Original website",
+		"scripts": {
+					"onclick:35:1" : "5556e4e0fc87d8e37d88b7c1981482797182747b",
+					"onclick:33:1" : "c653b020d243b8d64b0ab3bd5a2c3f280659cade",
+					"onclick:31:1" : "79a4a743adce1190554c534d328f853e7b2ee47e",
+					"onclick:16:1" : "79a4a743adce1190554c534d328f853e7b2ee47e"
+				}
+	}
+]
+}

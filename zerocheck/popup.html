@@ -1,0 +1,167 @@
+<!--
+	Author: SizeOne 2012
+	Use at your own risk.
+	sizeonedev.wordpress.com
+-->
+<head>
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript" src="sha1.js"></script>
+	<script type="text/javascript">
+
+		function loadHtml(link){
+		  var res = "";
+		  jQuery.ajax({
+		    url:link, 
+		    success:function(html){res = html;}, 
+		    async:false,
+		    cache: false
+		  });
+		  return res;
+		}
+
+		var json_text=loadHtml("http://sizeone.net/zerobin/list.json");
+		var hashes=JSON.parse(json_text);
+		var version_hashes=hashes["list"];
+		var site_hashes=hashes["sites"];
+
+		function info(hash){
+			for (var i = version_hashes.length - 1; i >= 0; i--) {
+				if(hash==version_hashes[i]["hash"]){
+					return version_hashes[i];
+				}
+			}
+			return undefined;
+		}
+
+		function site_info(hash){
+			for (var i = site_hashes.length - 1; i >= 0; i--) {
+				if(hash==site_hashes[i]["hash"]){
+					return site_hashes[i];
+				}
+			}
+			return undefined;
+		}
+
+	</script>
+	<style type="text/css">
+		html, body {
+			font-family: Arial,Helvetica,sans-serif;
+			font-size: 90%;
+			width: 400px;
+			padding-left: 2px;
+			padding-right: 2px;
+		}
+		hr {
+  			border: 0;
+  			color: #cdcdcd;
+			background-color: #cdcdcd;
+			height: 1px;
+		}
+	</style>
+</head>
+<body>
+	<h3 id="title"><img id="lock" src="" align="middle"/>&nbsp;<text id="ttext"></text></h3>
+	<div id="version"></div>
+	<div id="surl"></div>
+	<div id="author"></div>
+	<div id="hash"></div>
+	<div id="info"></div>
+	<div>&nbsp;</div>
+	<hr/>
+	<h3 id="title2"><img id="lock2" src="" align="middle"/>&nbsp;<text id="ttext2"></text></h3>
+	<div id="surl2"></div>
+	<div id="author2"></div>
+	<div id="hash2"></div>
+	<div id="info2"></div>
+	<div>&nbsp;</div>
+	<hr/>
+	<br/>
+	<div>If this information seems wrong try to refresh :)</div>
+	<div>Manual verification: sizeone.net/zerobin/list.json</div>
+	<script type="text/javascript">
+		var h=window.localStorage.getItem("hash");
+		var h2=window.localStorage.getItem("phash");
+		var lst=JSON.parse(window.localStorage.getItem("hlist"));
+		var lst2=JSON.parse(window.localStorage.getItem("hslist"));
+		var nfo=info(h);
+		var nfo2=site_info(h2);
+		var lock=document.getElementById("lock");
+		var ttext=document.getElementById("ttext");
+		var vtext=document.getElementById("version");
+		var htext=document.getElementById("hash");
+		var atext=document.getElementById("author");
+		var itext=document.getElementById("info");
+		var utext=document.getElementById("surl");
+		var lock2=document.getElementById("lock2");
+		var ttext2=document.getElementById("ttext2");
+		var htext2=document.getElementById("hash2");
+		var atext2=document.getElementById("author2");
+		var itext2=document.getElementById("info2");
+		var utext2=document.getElementById("surl2");
+		if(nfo==undefined){
+			lock.setAttribute("src","red_lock.png");
+			ttext.innerHTML="Unknown libraries!";
+			htext.innerHTML="Hash: "+h+"</br>";
+			itext.innerHTML="Please send this info to sizeonedev at gmail to be analized.";
+			var output="Location: "+window.localStorage.getItem("surl")+"<br/>";
+			for(var key in lst){
+				output+=key+" : "+lst[key]+"</br>"
+			}
+			utext.innerHTML=output;
+		}else if(!nfo["secure"]){
+			lock.setAttribute("src","red_lock.png");
+			ttext.innerHTML="Unsecure zerobin! Flaged by "+nfo["verifiedby"];
+			atext.innerHTML="Author: "+nfo["author"];
+			if(nfo["info"]!=undefined && nfo["info"]!=""){
+				itext.innerHTML="Info: "+nfo["info"];
+			}
+			if(nfo["url"]!=undefined && nfo["url"]!=""){
+				utext.innerHTML="Website: "+nfo["url"];
+			}
+		}else{
+			lock.setAttribute("src","green_lock.png");
+			ttext.innerHTML="Secure Libraries verified by "+nfo["verifiedby"];
+			vtext.innerHTML="Version: "+nfo["version"];
+			atext.innerHTML="Author: "+nfo["author"];
+			htext.innerHTML="Hash: "+nfo["hash"];
+			if(nfo["info"]!=undefined && nfo["info"]!=""){
+				itext.innerHTML="Info: "+nfo["info"];
+			}
+			if(nfo["url"]!=undefined && nfo["url"]!=""){
+				utext.innerHTML="Website: "+nfo["url"];
+			}
+		}
+		if(nfo2==undefined){
+			lock2.setAttribute("src","gray_lock.png");
+			ttext2.innerHTML="Unknown zerobin!";
+			htext2.innerHTML="Hash: "+h2+"</br>";
+			itext2.innerHTML="Please send this info to sizeonedev at gmail to be analized.";
+			var output="Location: "+window.localStorage.getItem("surl")+"<br/>";
+			for(var key in lst2){
+				output+=key+" : "+lst2[key]+"</br>"
+			}
+			utext2.innerHTML=output;
+		}else if(!nfo2["secure"]){
+			lock2.setAttribute("src","red_lock.png");
+			ttext2.innerHTML="Unsecure zerobin! Flaged by "+nfo2["verifiedby"];
+			atext2.innerHTML="Author: "+nfo2["author"];
+			if(nfo2["info"]!=undefined && nfo2["info"]!=""){
+				itext2.innerHTML="Info: "+nfo2["info"];
+			}
+			if(nfo2["url"]!=undefined && nfo2["url"]!=""){
+				utext2.innerHTML="Website: "+nfo2["url"];
+			}
+		}else{
+			lock2.setAttribute("src","green_lock.png");
+			ttext2.innerHTML="Secure Site verified by "+nfo2["verifiedby"];
+			atext2.innerHTML="Author: "+nfo2["author"];
+			htext2.innerHTML="Hash: "+nfo2["hash"];
+			if(nfo2["info"]!=undefined && nfo2["info"]!=""){
+				itext2.innerHTML="Info: "+nfo2["info"];
+			}
+			if(nfo2["url"]!=undefined && nfo2["url"]!=""){
+				utext2.innerHTML="Website: "+nfo2["url"];
+			}
+		}
+	</script>
+</body>
